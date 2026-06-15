@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Stockton Pharmacy</title>
+  <meta name="description" content="Get in touch with Stockton Pharmacy. Send us a message, find our address, phone number, fax, and view our operating hours.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/header.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <style>
+    .contact-layout-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+    }
+    
+    .contact-info-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    
+    .contact-detail-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .contact-detail-section h3 {
+      font-size: 18px;
+      border-bottom: 2px solid var(--brand-blue-light);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 1024px) {
+      .contact-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Header -->
+  <custom-header active="contact"></custom-header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>»</span>
+        <span>Contact Us</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Grid -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="contact-layout-grid">
+        
+        <!-- Left Column: Info Card -->
+        <div class="contact-info-card">
+          <div class="contact-detail-section">
+            <h3>Get In Touch</h3>
+            <ul class="footer-contact-list" style="color: var(--text-medium);">
+              <li class="footer-contact-item" style="font-size: 16px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <div>
+                  <strong style="display: block; color: var(--brand-blue-dark);">Phone</strong>
+                  <span class="red-text" style="font-weight: 600; font-size: 18px;">209-868-1555</span>
+                </div>
+              </li>
+              
+              <li class="footer-contact-item" style="font-size: 16px; margin-top: 8px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                  <polyline points="6 9 6 2 18 2 18 9"/>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                  <rect x="6" y="14" width="12" height="8"/>
+                </svg>
+                <div>
+                  <strong style="display: block; color: var(--brand-blue-dark);">Fax</strong>
+                  <span class="red-text" style="font-weight: 600; font-size: 18px;">209-868-1557</span>
+                </div>
+              </li>
+              
+              <li class="footer-contact-item" style="font-size: 16px; margin-top: 8px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <div>
+                  <strong style="display: block; color: var(--brand-blue-dark);">Email</strong>
+                  <a href="mailto:info@stocktonrxpharmacy.com" style="color: var(--brand-blue-accent); font-weight: 600; font-size: 15px; word-break: break-all;">info@stocktonrxpharmacy.com</a>
+                </div>
+              </li>
+              
+              <li class="footer-contact-item" style="font-size: 16px; margin-top: 8px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <div>
+                  <strong style="display: block; color: var(--brand-blue-dark);">Visit Us</strong>
+                  <span>1140 W Hammer Lane, Ste D<br>Stockton, CA 95209</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="contact-detail-section">
+            <h3>Hours of Operation</h3>
+            <ul class="footer-hours-list" style="color: var(--text-medium);">
+              <li class="footer-hours-item" style="font-size: 15px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <span><strong>Monday–Friday:</strong> 9:00 AM – 7:00 PM</span>
+              </li>
+              <li class="footer-hours-item" style="font-size: 15px; padding-left: 28px;">
+                <span><strong>Saturday:</strong> 10:00 AM – 4:00 PM</span>
+              </li>
+              <li class="footer-hours-item" style="font-size: 15px; padding-left: 28px;">
+                <span><strong>Sunday:</strong> Closed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Column: Form Card -->
+        <div class="form-card" style="padding: 40px; box-shadow: var(--shadow-sm);">
+          <h2 style="font-size: 24px; margin-bottom: 24px;">Send Us a Message</h2>
+          <form id="contactForm" novalidate>
+            <!-- Formspree hidden fields -->
+            <input type="hidden" name="_subject" value="New Contact Message - Stockton Pharmacy">
+            <!-- Name -->
+            <div class="form-group">
+              <label class="form-label" for="contactName">Name <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <input class="form-input" type="text" id="contactName" name="name" placeholder="Your name">
+              </div>
+              <div class="error-message" id="contactNameError" style="display: none;">Name is required.</div>
+            </div>
+
+            <div class="form-grid-2" style="margin-bottom: 0;">
+              <!-- Email -->
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Email <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  <input class="form-input" type="email" id="contactEmail" name="email" placeholder="your@email.com">
+                </div>
+                <div class="error-message" id="contactEmailError" style="display: none;">A valid email is required.</div>
+              </div>
+
+              <!-- Phone (optional) -->
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Phone (optional)</label>
+                <div class="input-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <input class="form-input" type="tel" id="contactPhone" name="phone" placeholder="209-555-0142">
+                </div>
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Subject <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22v-5M9 17h6M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18Z"/>
+                </svg>
+                <input class="form-input" type="text" id="contactSubject" name="subject" placeholder="How can we help?">
+              </div>
+              <div class="error-message" id="contactSubjectError" style="display: none;">Subject is required.</div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Message <span class="required">*</span></label>
+              <textarea class="form-input" id="contactMessage" name="message" rows="5" placeholder="Write your message here..."></textarea>
+              <div class="error-message" id="contactMessageError" style="display: none;">Message is required.</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-primary form-submit-btn" type="submit" id="contactSubmitBtn" style="border-radius: var(--radius-sm);">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Modal Overlay -->
+  <div class="modal-overlay" id="successModal">
+    <div class="success-modal">
+      <div class="success-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h3>Message Sent Successfully</h3>
+      <p>Thank you for reaching out! Your message has been received. Our team will review it and get back to you as soon as possible.</p>
+      <button class="btn btn-primary" id="closeModalBtn">Done</button>
+    </div>
+  </div>
+
+  <!-- Custom Footer -->
+  <custom-footer></custom-footer>
+
+  <!-- Form Validation + Formspree Email Submission Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      const successModal = document.getElementById('successModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const submitBtn = document.getElementById('contactSubmitBtn');
+      const subjectInput = document.getElementById('contactSubject');
+
+      // Formspree endpoint — forwards to info@stocktonrxpharmacy.com
+      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwzgday';
+
+      // Pre-fill Subject from URL search params
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlSubject = urlParams.get('subject');
+      if (urlSubject) subjectInput.value = urlSubject;
+
+      const fields = [
+        { id: 'contactName',    errorId: 'contactNameError',    type: 'text' },
+        { id: 'contactEmail',   errorId: 'contactEmailError',   type: 'email' },
+        { id: 'contactSubject', errorId: 'contactSubjectError', type: 'text' },
+        { id: 'contactMessage', errorId: 'contactMessageError', type: 'text' }
+      ];
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function validate() {
+        let isValid = true;
+        fields.forEach(field => {
+          const input = document.getElementById(field.id);
+          const errorMsg = document.getElementById(field.errorId);
+          const val = input.value.trim();
+          const fieldValid = val && (field.type !== 'email' || validateEmail(val));
+          if (!fieldValid) {
+            input.classList.add('error-border');
+            errorMsg.style.display = 'block';
+            isValid = false;
+          } else {
+            input.classList.remove('error-border');
+            errorMsg.style.display = 'none';
+          }
+        });
+        return isValid;
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!validate()) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+          const response = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            successModal.classList.add('active');
+            form.reset();
+            fields.forEach(f => document.getElementById(f.id).classList.remove('error-border'));
+          } else {
+            sendMailtoFallback();
+          }
+        } catch (err) {
+          sendMailtoFallback();
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      });
+
+      function sendMailtoFallback() {
+        const name    = document.getElementById('contactName').value;
+        const email   = document.getElementById('contactEmail').value;
+        const subject = document.getElementById('contactSubject').value;
+        const message = document.getElementById('contactMessage').value;
+        const body    = `From: ${name} (${email})%0A%0A${message}`;
+        window.location.href = `mailto:info@stocktonrxpharmacy.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      }
+
+      closeModalBtn.addEventListener('click', () => {
+        successModal.classList.remove('active');
+      });
+
+      // Clear validation on typing
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        const errorMsg = document.getElementById(field.errorId);
+        input.addEventListener('input', () => {
+          const val = input.value.trim();
+          const valid = val && (field.type !== 'email' || validateEmail(val));
+          if (valid) {
+            input.classList.remove('error-border');
+            errorMsg.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
