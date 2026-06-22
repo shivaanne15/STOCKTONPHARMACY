@@ -59,7 +59,7 @@ class CustomHeader extends HTMLElement {
               </svg>
               <div class="contact-item-text">
                 <span class="contact-item-label">Visit Us at:</span>
-                <span class="contact-item-value">1140 W Hammer Lane, Ste D<br>Stockton, CA 95209</span>
+                <span class="contact-item-value">1140 W Hammer Lane, Suite 106<br>Stockton, CA 95209</span>
               </div>
             </div>
             

@@ -65,7 +65,7 @@ class CustomFooter extends HTMLElement {
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
-                <span>1140 W Hammer Lane, Ste D<br>Stockton, CA 95209</span>
+                <span>1140 W Hammer Lane, Suite 106<br>Stockton, CA 95209</span>
               </li>
             </ul>
           </div>
@@ -78,13 +78,10 @@ class CustomFooter extends HTMLElement {
                   <circle cx="12" cy="12" r="10"/>
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
-                <span>Mon–Fri: 9:00 AM – 7:00 PM</span>
+                <span>Mon–Fri: 9:00 AM – 5:00 PM</span>
               </li>
               <li class="footer-hours-item" style="padding-left: 26px;">
-                <span>Sat: 10:00 AM – 4:00 PM</span>
-              </li>
-              <li class="footer-hours-item" style="padding-left: 26px;">
-                <span>Sun: Closed</span>
+                <span>Sat–Sun: Closed</span>
               </li>
             </ul>
           </div>
