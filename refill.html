@@ -36,6 +36,10 @@
       
       <div class="form-card">
         <form id="refillForm" novalidate>
+          <input type="hidden" name="_subject" value="New Refill Request - Stockton Pharmacy">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-grid-2">
             <!-- Patient Name -->
             <div class="form-group">
@@ -112,8 +116,8 @@
           <polyline points="20 6 9 17 4 12"/>
         </svg>
       </div>
-      <h3>One Last Step</h3>
-      <p>Your email app has opened with your refill request ready to go — just press Send. If it didn't open, call us at <a href="tel:209-868-1555">209-868-1555</a> or email <a href="mailto:info@stocktonpharmacy.com">info@stocktonpharmacy.com</a>.</p>
+      <h3 id="modalTitle">Refill Request Submitted</h3>
+      <p id="modalBody">Thank you! Your prescription refill request has been successfully submitted. We will process it shortly. If we have any questions, we will reach out using the contact details provided.</p>
       <button class="btn btn-primary" id="closeModalBtn">Done</button>
     </div>
   </div>
@@ -127,8 +131,13 @@
       const form = document.getElementById('refillForm');
       const successModal = document.getElementById('successModal');
       const closeModalBtn = document.getElementById('closeModalBtn');
+      const submitBtn = document.getElementById('refillSubmitBtn');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalBody = document.getElementById('modalBody');
 
       const PHARMACY_EMAIL = 'info@stocktonpharmacy.com';
+      // FormSubmit delivers submissions straight to the inbox above (no account needed).
+      const FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + PHARMACY_EMAIL;
 
       const fields = [
         { id: 'patientName', errorId: 'patientNameError' },
@@ -154,19 +163,42 @@
         return isValid;
       }
 
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!validate()) return;
 
-        const name   = document.getElementById('patientName').value;
-        const dob    = document.getElementById('dob').value;
-        const phone  = document.getElementById('phone').value;
-        const rx     = document.getElementById('rxNumber').value;
-        const notes  = document.getElementById('notes').value;
-        const body   = `Patient Name: ${name}\nDate of Birth: ${dob}\nPhone: ${phone}\nRx Number: ${rx}\nNotes: ${notes}`;
-        window.location.href = `mailto:${PHARMACY_EMAIL}?subject=${encodeURIComponent(`Refill Request - ${name}`)}&body=${encodeURIComponent(body)}`;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-        successModal.classList.add('active');
+        try {
+          const response = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (!response.ok) throw new Error('form service unavailable');
+
+          modalTitle.textContent = 'Refill Request Submitted';
+          modalBody.textContent = 'Thank you! Your prescription refill request has been successfully submitted. We will process it shortly. If we have any questions, we will reach out using the contact details provided.';
+          form.reset();
+          fields.forEach(f => document.getElementById(f.id).classList.remove('error-border'));
+        } catch (err) {
+          // Direct delivery failed — hand off to the visitor's email app instead
+          const name   = document.getElementById('patientName').value;
+          const dob    = document.getElementById('dob').value;
+          const phone  = document.getElementById('phone').value;
+          const rx     = document.getElementById('rxNumber').value;
+          const notes  = document.getElementById('notes').value;
+          const body   = `Patient Name: ${name}\nDate of Birth: ${dob}\nPhone: ${phone}\nRx Number: ${rx}\nNotes: ${notes}`;
+          window.location.href = `mailto:${PHARMACY_EMAIL}?subject=${encodeURIComponent(`Refill Request - ${name}`)}&body=${encodeURIComponent(body)}`;
+
+          modalTitle.textContent = 'One Last Step';
+          modalBody.textContent = 'Your email app has opened with your refill request ready to go — just press Send. If it didn’t open, call us at 209-868-1555 or email info@stocktonpharmacy.com.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Refill Request';
+          successModal.classList.add('active');
+        }
       });
 
       closeModalBtn.addEventListener('click', () => {
