@@ -108,7 +108,7 @@
                 </svg>
                 <div>
                   <strong style="display: block; color: var(--brand-blue-dark);">Email</strong>
-                  <a href="mailto:info@stocktonrxpharmacy.com" style="color: var(--brand-blue-accent); font-weight: 600; font-size: 15px; word-break: break-all;">info@stocktonrxpharmacy.com</a>
+                  <a href="mailto:info@stocktonpharmacy.com" style="color: var(--brand-blue-accent); font-weight: 600; font-size: 15px; word-break: break-all;">info@stocktonpharmacy.com</a>
                 </div>
               </li>
               
@@ -240,7 +240,7 @@
       const submitBtn = document.getElementById('contactSubmitBtn');
       const subjectInput = document.getElementById('contactSubject');
 
-      // Formspree endpoint — forwards to info@stocktonrxpharmacy.com
+      // Formspree endpoint — forwards to info@stocktonpharmacy.com
       const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwzgday';
 
       // Pre-fill Subject from URL search params
@@ -313,7 +313,7 @@
         const subject = document.getElementById('contactSubject').value;
         const message = document.getElementById('contactMessage').value;
         const body    = `From: ${name} (${email})%0A%0A${message}`;
-        window.location.href = `mailto:info@stocktonrxpharmacy.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        window.location.href = `mailto:info@stocktonpharmacy.com?subject=${encodeURIComponent(subject)}&body=${body}`;
       }
 
       closeModalBtn.addEventListener('click', () => {

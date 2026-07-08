@@ -31,7 +31,7 @@
     <div class="container form-container-box">
       <p class="form-intro-text">
         Send us your Rx info and we'll have it ready for pickup or delivery.<br>
-        Call <a href="tel:209-868-1555">209-868-1555</a> or email <a href="mailto:info@stocktonrxpharmacy.com">info@stocktonrxpharmacy.com</a>.
+        Call <a href="tel:209-868-1555">209-868-1555</a> or email <a href="mailto:info@stocktonpharmacy.com">info@stocktonpharmacy.com</a>.
       </p>
       
       <div class="form-card">
@@ -132,7 +132,7 @@
       const closeModalBtn = document.getElementById('closeModalBtn');
       const submitBtn = document.getElementById('refillSubmitBtn');
 
-      // Formspree endpoint — forwards to info@stocktonrxpharmacy.com
+      // Formspree endpoint — forwards to info@stocktonpharmacy.com
       // Sign up at formspree.io, create a form for this email, and replace the ID below.
       const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwzgday';
 
@@ -202,7 +202,7 @@
         const rx     = document.getElementById('rxNumber').value;
         const notes  = document.getElementById('notes').value;
         const body   = `Patient Name: ${name}%0ADate of Birth: ${dob}%0APhone: ${phone}%0ARx Number: ${rx}%0ANotes: ${notes}`;
-        window.location.href = `mailto:info@stocktonrxpharmacy.com?subject=Refill Request - ${name}&body=${body}`;
+        window.location.href = `mailto:info@stocktonpharmacy.com?subject=Refill Request - ${name}&body=${body}`;
       }
 
       closeModalBtn.addEventListener('click', () => {

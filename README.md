@@ -23,5 +23,5 @@ Website for **Stockton Pharmacy**, operated by BJRX Pharmacy LTC, LLC — proudl
 ## Contact
 
 📞 209-868-1555 · 📠 209-868-1557  
-✉️ info@stocktonrxpharmacy.com  
+✉️ info@stocktonpharmacy.com  
 📍 1140 W Hammer Lane, Ste D, Stockton, CA 95209
