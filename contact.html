@@ -146,8 +146,6 @@
         <div class="form-card" style="padding: 40px; box-shadow: var(--shadow-sm);">
           <h2 style="font-size: 24px; margin-bottom: 24px;">Send Us a Message</h2>
           <form id="contactForm" novalidate>
-            <!-- Formspree hidden fields -->
-            <input type="hidden" name="_subject" value="New Contact Message - Stockton Pharmacy">
             <!-- Name -->
             <div class="form-group">
               <label class="form-label" for="contactName">Name <span class="required">*</span></label>
@@ -222,8 +220,8 @@
           <polyline points="20 6 9 17 4 12"/>
         </svg>
       </div>
-      <h3>Message Sent Successfully</h3>
-      <p>Thank you for reaching out! Your message has been received. Our team will review it and get back to you as soon as possible.</p>
+      <h3>One Last Step</h3>
+      <p>Your email app has opened with your message ready to go — just press Send. If it didn't open, email us directly at <a href="mailto:info@stocktonpharmacy.com">info@stocktonpharmacy.com</a> or call <a href="tel:209-868-1555">209-868-1555</a>.</p>
       <button class="btn btn-primary" id="closeModalBtn">Done</button>
     </div>
   </div>
@@ -231,17 +229,15 @@
   <!-- Custom Footer -->
   <custom-footer></custom-footer>
 
-  <!-- Form Validation + Formspree Email Submission Script -->
+  <!-- Form Validation + Email Submission Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('contactForm');
       const successModal = document.getElementById('successModal');
       const closeModalBtn = document.getElementById('closeModalBtn');
-      const submitBtn = document.getElementById('contactSubmitBtn');
       const subjectInput = document.getElementById('contactSubject');
 
-      // Formspree endpoint — forwards to info@stocktonpharmacy.com
-      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwzgday';
+      const PHARMACY_EMAIL = 'info@stocktonpharmacy.com';
 
       // Pre-fill Subject from URL search params
       const urlParams = new URLSearchParams(window.location.search);
@@ -278,43 +274,19 @@
         return isValid;
       }
 
-      form.addEventListener('submit', async (e) => {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!validate()) return;
 
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-
-        try {
-          const response = await fetch(FORMSPREE_ENDPOINT, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (response.ok) {
-            successModal.classList.add('active');
-            form.reset();
-            fields.forEach(f => document.getElementById(f.id).classList.remove('error-border'));
-          } else {
-            sendMailtoFallback();
-          }
-        } catch (err) {
-          sendMailtoFallback();
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
-        }
-      });
-
-      function sendMailtoFallback() {
         const name    = document.getElementById('contactName').value;
         const email   = document.getElementById('contactEmail').value;
         const subject = document.getElementById('contactSubject').value;
         const message = document.getElementById('contactMessage').value;
-        const body    = `From: ${name} (${email})%0A%0A${message}`;
-        window.location.href = `mailto:info@stocktonpharmacy.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-      }
+        const body    = `From: ${name} (${email})\n\n${message}`;
+        window.location.href = `mailto:${PHARMACY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        successModal.classList.add('active');
+      });
 
       closeModalBtn.addEventListener('click', () => {
         successModal.classList.remove('active');

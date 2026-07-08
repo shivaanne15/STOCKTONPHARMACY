@@ -18,7 +18,7 @@ Website for **Stockton Pharmacy**, operated by BJRX Pharmacy LTC, LLC — proudl
 - **HTML5** — Semantic markup
 - **Vanilla CSS** — Custom design system with CSS variables (`css/style.css`)
 - **Vanilla JS** — Web Components for shared header/footer (`js/header.js`, `js/footer.js`)
-- **Formspree** — Serverless form-to-email delivery
+- **Email forms** — Contact and refill forms open the visitor's email app with a pre-filled message (mailto)
 
 ## Contact
 
