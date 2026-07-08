@@ -176,7 +176,10 @@
             body: new FormData(form),
             headers: { 'Accept': 'application/json' }
           });
-          if (!response.ok) throw new Error('form service unavailable');
+          // FormSubmit answers 200 even when it can't deliver (e.g. before
+          // activation), so the JSON success flag must be checked too
+          const result = await response.json();
+          if (!response.ok || String(result.success) !== 'true') throw new Error('form service unavailable');
 
           modalTitle.textContent = 'Refill Request Submitted';
           modalBody.textContent = 'Thank you! Your prescription refill request has been successfully submitted. We will process it shortly. If we have any questions, we will reach out using the contact details provided.';
